@@ -76,8 +76,8 @@
 		3EE90FD42BC7A7E900AE87FB /* SettingNotification */ = {
 			isa = PBXGroup;
 			children = (
-				3EE90FD52BC7A86100AE87FB /* SettingNotificatioinViewController.swift */,
 				3EE90FD72BC7A8BE00AE87FB /* TimePickerTableViewCell.swift */,
+				3EE90FD52BC7A86100AE87FB /* SettingNotificatioinViewController.swift */,
 				3EE90FD82BC7A8BE00AE87FB /* TimePickerTableViewCell.xib */,
 				3EE90FDB2BC7A9EC00AE87FB /* LabelTableViewCell.swift */,
 				3EE90FDC2BC7A9EC00AE87FB /* LabelTableViewCell.xib */,
