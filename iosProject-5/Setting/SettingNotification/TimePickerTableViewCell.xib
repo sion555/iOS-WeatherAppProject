@@ -18,18 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rM9-r7-JVy">
-                        <rect key="frame" x="267" y="18" width="106" height="34"/>
+                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3s-9L-pPW">
+                        <rect key="frame" x="350" y="18" width="37" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="textColor" name="AccentColor"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                <color key="value" systemColor="linkColor"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </textField>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-A8-V87">
                         <rect key="frame" x="20" y="25" width="180" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -37,12 +31,18 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3s-9L-pPW">
-                        <rect key="frame" x="350" y="18" width="37" height="35"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rM9-r7-JVy">
+                        <rect key="frame" x="287" y="18" width="106" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
-                    </button>
+                        <color key="textColor" name="AccentColor"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                <color key="value" systemColor="linkColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
