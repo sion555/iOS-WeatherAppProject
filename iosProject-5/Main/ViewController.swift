@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         print("tokki")
         print("tokki2")
         
-        
+        print("tokki3")
         print("tokki4")
         
         configureLocationManager()
