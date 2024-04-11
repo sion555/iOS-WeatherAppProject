@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BE6DFACE2BC4D6F60091D296 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DFACD2BC4D6F60091D296 /* SearchDetailViewController.swift */; };
 		BE6DFAD52BC529B30091D296 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DFAD42BC529B30091D296 /* DetailViewController.swift */; };
+		BEB11E8B2BC78E50009356B2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BEB11E8A2BC78E50009356B2 /* Alamofire */; };
+		BEB11E8D2BC78E50009356B2 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BEB11E8C2BC78E50009356B2 /* AlamofireDynamic */; };
+		BEB11E8F2BC78E59009356B2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BEB11E8E2BC78E59009356B2 /* Kingfisher */; };
 		BEE230052BC7799B00A9A8A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BEE230042BC7799B00A9A8A1 /* .gitignore */; };
 		BEF431992BC2E785004C7D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF431982BC2E785004C7D85 /* AppDelegate.swift */; };
 		BEF4319B2BC2E785004C7D85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4319A2BC2E785004C7D85 /* SceneDelegate.swift */; };
@@ -16,9 +19,6 @@
 		BEF431A02BC2E785004C7D85 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BEF4319F2BC2E785004C7D85 /* Base */; };
 		BEF431A22BC2E787004C7D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF431A12BC2E787004C7D85 /* Assets.xcassets */; };
 		BEF431A52BC2E787004C7D85 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BEF431A42BC2E787004C7D85 /* Base */; };
-		BEF431AE2BC2EB4F004C7D85 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BEF431AD2BC2EB4F004C7D85 /* Alamofire */; };
-		BEF431B02BC2EB4F004C7D85 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BEF431AF2BC2EB4F004C7D85 /* AlamofireDynamic */; };
-		BEF431B32BC2EB58004C7D85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BEF431B22BC2EB58004C7D85 /* Kingfisher */; };
 		BEF431B52BC2EE21004C7D85 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF431B42BC2EE21004C7D85 /* WeatherModel.swift */; };
 		BEFDACDF2BC31F98000A5FFE /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFDACDE2BC31F98000A5FFE /* SettingTableViewController.swift */; };
 		BEFDACE12BC31FA9000A5FFE /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFDACE02BC31FA9000A5FFE /* AccountTableViewController.swift */; };
@@ -48,9 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEF431B32BC2EB58004C7D85 /* Kingfisher in Frameworks */,
-				BEF431AE2BC2EB4F004C7D85 /* Alamofire in Frameworks */,
-				BEF431B02BC2EB4F004C7D85 /* AlamofireDynamic in Frameworks */,
+				BEB11E8F2BC78E59009356B2 /* Kingfisher in Frameworks */,
+				BEB11E8B2BC78E50009356B2 /* Alamofire in Frameworks */,
+				BEB11E8D2BC78E50009356B2 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,9 +143,9 @@
 			);
 			name = "iosProject-5";
 			packageProductDependencies = (
-				BEF431AD2BC2EB4F004C7D85 /* Alamofire */,
-				BEF431AF2BC2EB4F004C7D85 /* AlamofireDynamic */,
-				BEF431B22BC2EB58004C7D85 /* Kingfisher */,
+				BEB11E8A2BC78E50009356B2 /* Alamofire */,
+				BEB11E8C2BC78E50009356B2 /* AlamofireDynamic */,
+				BEB11E8E2BC78E59009356B2 /* Kingfisher */,
 			);
 			productName = "iosProject-5";
 			productReference = BEF431952BC2E785004C7D85 /* iosProject-5.app */;
@@ -459,17 +459,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BEF431AD2BC2EB4F004C7D85 /* Alamofire */ = {
+		BEB11E8A2BC78E50009356B2 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BEF431AC2BC2EB4F004C7D85 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		BEF431AF2BC2EB4F004C7D85 /* AlamofireDynamic */ = {
+		BEB11E8C2BC78E50009356B2 /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BEF431AC2BC2EB4F004C7D85 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
 		};
-		BEF431B22BC2EB58004C7D85 /* Kingfisher */ = {
+		BEB11E8E2BC78E59009356B2 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BEF431B12BC2EB58004C7D85 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
