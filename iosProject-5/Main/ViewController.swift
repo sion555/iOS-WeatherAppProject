@@ -12,7 +12,7 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
-    
+    var a: String?
     @IBOutlet weak var todaysDate: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var maxTemp: UILabel!
