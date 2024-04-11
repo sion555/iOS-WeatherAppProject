@@ -59,7 +59,14 @@ class SettingTableViewController: UITableViewController {
 
         return cell
     }
-    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingNoti") as? SettingNotificatioinViewController
+            else { return }
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
