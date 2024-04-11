@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         print("tokki")
         print("tokki2")
         
+        
+        print("tokki4")
         configureLocationManager()
         
     // MARK: - 오늘의 날짜를 보여주는 dateFormatter
