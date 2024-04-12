@@ -11,8 +11,8 @@ class SettingNotificatioinViewController: UITableViewController {
     let center = UNUserNotificationCenter.current()
     
     var tfButton: UITextField?
-    var toggleSwitch = UISwitch()
-    var isToggleOn = false
+    let toggleStateKey = "toggleState"
+    var isToggleOn = UserDefaults.standard.bool(forKey: "toggleState")
     let pickerView = UIPickerView()
     var hours = Array(0..<24)
     var minutes = Array(0..<60)
@@ -49,6 +49,8 @@ class SettingNotificatioinViewController: UITableViewController {
     }
     
     func requestSendNotification(hour: Int, minute: Int) {
+        let identifier = "Noti_ID"
+        
         let content = UNMutableNotificationContent()
         content.title = "좋은 아침이에요!"
         content.body = "오늘의 날씨를 알려드릴게요! 🌈"
@@ -58,15 +60,26 @@ class SettingNotificatioinViewController: UITableViewController {
         dateComponents.minute = minute
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error {
-                print("Noti error: \(error.localizedDescription)")
+//        UNUserNotificationCenter.current().add(request) { error in
+//            if let error {
+//                print("Noti error: \(error.localizedDescription)")
+//            }
+//        }
+        if isToggleOn {
+            print("noti is on")
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error {
+                    print("Noti error: \(error.localizedDescription)")
+                }
             }
+        } else {
+            print("noti is off")
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["Noti_ID"])
         }
     }
-    
+
     
     // MARK: - PickerView Methods
 
@@ -103,6 +116,8 @@ class SettingNotificatioinViewController: UITableViewController {
     
     @objc func toggleSwitchChanged(_ sender: UISwitch) {
         isToggleOn = sender.isOn
+        requestSendNotification(hour: pickedHour ?? 0, minute: pickedMinute ?? 0)
+        UserDefaults.standard.set(isToggleOn, forKey: toggleStateKey)
         tableView.reloadData()
     }
     
@@ -127,6 +142,7 @@ class SettingNotificatioinViewController: UITableViewController {
             
             cell.lblTitle.text = "On / Off"
             cell.switchToggle.addTarget(self, action: #selector(toggleSwitchChanged(_:)), for: .valueChanged)
+            cell.switchToggle.isOn = UserDefaults.standard.bool(forKey: toggleStateKey)
             
             return cell
         } else {
