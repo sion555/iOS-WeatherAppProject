@@ -6,16 +6,22 @@
 //
 
 import UIKit
+import WebKit
 
 class OpenSourceViewController: UIViewController {
-
+    var strURL: String?
+    
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        strURL = "https://mint-cupcake-e59.notion.site/d21531522cca4594b8ace4ff6091721f?pvs=25"
+        
+        guard let strURL, let url = URL(string: strURL) else { return }
+        let request = URLRequest(url: url)
+        webView.load(request)
     }
     
-
     /*
     // MARK: - Navigation
 
