@@ -50,8 +50,8 @@ class SettingNotificatioinViewController: UITableViewController {
     
     func requestSendNotification(hour: Int, minute: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "오늘의 날씨입니다"
-        content.body = "바람이 많이 부니 조심하세요."
+        content.title = "좋은 아침이에요!"
+        content.body = "오늘의 날씨를 알려드릴게요! 🌈"
         
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
         dateComponents.hour = hour
@@ -126,7 +126,6 @@ class SettingNotificatioinViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "toggleCell", for: indexPath) as! ToggleTableViewCell
             
             cell.lblTitle.text = "On / Off"
-//            cell.switchToggle.isOn = false
             cell.switchToggle.addTarget(self, action: #selector(toggleSwitchChanged(_:)), for: .valueChanged)
             
             return cell
@@ -160,7 +159,10 @@ class SettingNotificatioinViewController: UITableViewController {
             }
         }
     }
-
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

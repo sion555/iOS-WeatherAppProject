@@ -11,46 +11,35 @@ class SettingTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         title = "설정"
-        tableView.rowHeight = 55
+        self.tableView.separatorInset.left = 0
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 3
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "set1", for: indexPath)
 
-        // Configure the cell...
-        
         var content = cell.defaultContentConfiguration()
         
         switch indexPath.row {
             case 0:
                 content.text = "일반 설정"
             case 1:
-                content.text = "알람 설정"
+                content.text = "알림 설정"
             case 2:
-                content.text = "도움말 및 지원"
-            case 3:
-                content.text = "오픈소스 라이선스"
+                content.text = "약관 및 정책"
             default:
                 content.text = "기타"
             }
@@ -63,6 +52,11 @@ class SettingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingNoti") as? SettingNotificatioinViewController
+            else { return }
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.row == 2 {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "TermsPolicy") as? TermsPolicyTableViewController
             else { return }
             navigationController?.pushViewController(vc, animated: true)
         }
