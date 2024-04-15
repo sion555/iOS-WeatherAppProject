@@ -114,11 +114,7 @@ class SearchTableViewController: UITableViewController {
             
             // 레이블을 생성하고 스택 뷰에 추가합니다.
             let label = UILabel()
-            if isSearchStarted && !hasSearchResults {
-                label.text = "검색 결과 없음"
-            } else if !isSearchStarted { // 검색이 시작되지 않은 초기 상태
-                label.text = "원하는 지역을 검색하세요"
-            }
+            label.text = "검색 결과 없음"
             label.font = UIFont.systemFont(ofSize: 28)
             label.textColor = .gray
             label.textAlignment = .center
@@ -153,25 +149,31 @@ class SearchTableViewController: UITableViewController {
         
         let searchRequest = MKLocalSearch.Request(completion: completion)
         let search = MKLocalSearch(request: searchRequest)
-        search.start { (response, error) in
-            guard let response = response, error == nil else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error").")
+        search.start { [weak self] (response, error) in
+            guard let self = self, let response = response, error == nil else {
+                print("Error: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
-            
             let coordinate = response.mapItems[0].placemark.coordinate
+            if let searchDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchDetailViewController") as? SearchDetailViewController {
+                searchDetailVC.location = (latitude: coordinate.latitude, longitude: coordinate.longitude)
+            }
+        
+            
             print("Latitude: \(coordinate.latitude), Longitude: \(coordinate.longitude)")
-            
-            
             // 이제 위에서 받은 좌표를 이용해 아래 메서드로 날씨 정보 API를 호출하기
             
-            self.searchAdd(lat: coordinate.latitude, lon: coordinate.longitude, selectedTitle: completion.title)
+            self.searchAdd(forLocation: (latitude: coordinate.latitude, longitude: coordinate.longitude), city: completion.title)
+            
+            
         }
     }
     
-    func searchAdd(lat: Double, lon: Double, selectedTitle: String) {
+    func searchAdd(forLocation location: (latitude: Double, longitude: Double)?, city: String?) {
+        
         let endPoint = "https://api.openweathermap.org/data/2.5/weather"
-        let params: Parameters = ["lat": lat, "lon": lon, "lang": "kr", "units": "metric", "appid": appId]
+        
+        let params: Parameters = ["lat": location?.latitude ?? "", "lon": location?.longitude ?? "", "lang": "kr", "units": "metric", "appid": appId]
         
         AF.request(endPoint, method: .get, parameters: params).responseDecodable(of: Root.self) { response in
             switch response.result {
@@ -180,17 +182,19 @@ class SearchTableViewController: UITableViewController {
                     let main = root.main
                     let iconURL = "https://openweathermap.org/img/wn/\(weather.icon)@2x.png"
                     
-//                    let searchResult.title = self.searchResults[0] // 이 부분을 어떻게 바꿔야 선택된 셀의 title을 받을 수 있을까? - 해결) 테이블 뷰 didselectrow에서 indexpath.row를 받은 completion을 이용함(이 함수 파라미터에 .title 삽입)
-                    
-                    if let searchModalVC = self.storyboard?.instantiateViewController(withIdentifier: "searchDetail") as? SearchDetailViewController {
-                        searchModalVC.city = selectedTitle
-                        searchModalVC.temp = "\(Int(main.temp))"
-                        searchModalVC.tempMax = "\(Int(main.tempMax))"
-                        searchModalVC.tempMin = "\(Int(main.tempMin))"
-                        searchModalVC.weatherImageUrl = iconURL
 
+                    
+                    if let searchDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchDetailViewController") as? SearchDetailViewController {
                         
-                        self.present(searchModalVC, animated: true)
+                        searchDetailVC.city = city
+                        searchDetailVC.temp = "\(Int(main.temp))"
+                        searchDetailVC.tempMax = "\(Int(main.tempMax))"
+                        searchDetailVC.tempMin = "\(Int(main.tempMin))"
+                        searchDetailVC.weatherImageUrl = iconURL
+                        
+                        searchDetailVC.location = location
+                        
+                        self.present(searchDetailVC, animated: true)
                     }
                     
                 case .failure(let error):

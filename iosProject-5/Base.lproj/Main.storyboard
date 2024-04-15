@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherViewController" id="BYZ-38-t0r" customClass="WeatherViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +38,25 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <items>
-                                    <navigationItem id="ThF-j7-HO8"/>
+                                    <navigationItem id="pGL-lj-hwY">
+                                        <centerItemGroups>
+                                            <barButtonItemGroup customizationDisposition="fixed" id="5bh-wW-OCn">
+                                                <barButtonItems>
+                                                    <barButtonItem title="공유 ..." image="arrow.up.heart" catalog="system" id="GcA-iR-axP"/>
+                                                    <barButtonItem title="지역 추가" image="plus" catalog="system" id="9I6-vj-sBj">
+                                                        <connections>
+                                                            <segue destination="Ft0-o6-0c9" kind="show" id="fDe-bc-CYS"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem title="설정" image="gearshape" catalog="system" id="Npa-a5-ajr">
+                                                        <connections>
+                                                            <segue destination="GOC-jj-YDp" kind="show" id="nvB-NM-Ad9"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </barButtonItems>
+                                            </barButtonItemGroup>
+                                        </centerItemGroups>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YK-vi-0BI">
@@ -47,22 +66,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qok-xI-5GV">
-                                <rect key="frame" x="16" y="349" width="361" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-SL-cHU">
-                                <rect key="frame" x="16" y="388" width="361" height="28"/>
+                                <rect key="frame" x="89" y="388" width="214" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5w-Nl-pp2">
-                                <rect key="frame" x="16" y="443" width="361" height="287"/>
+                                <rect key="frame" x="16" y="436" width="361" height="303"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhM-9D-K13">
@@ -72,7 +84,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikg-pS-fuu">
-                                <rect key="frame" x="316" y="783" width="48" height="35"/>
+                                <rect key="frame" x="329" y="783" width="48" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -106,12 +118,38 @@
                                 <rect key="frame" x="89" y="248" width="214" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qok-xI-5GV">
+                                <rect key="frame" x="16" y="349" width="361" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfI-2K-4EH">
+                                <rect key="frame" x="294" y="393" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <imageReference key="image" image="gobackward" catalog="system" symbolScale="small"/>
+                                    <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="actUpdate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SEN-9o-eXk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcH-Cf-HTr">
+                                <rect key="frame" x="191" y="149" width="186" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXj-22-oQf">
                                 <rect key="frame" x="160" y="775" width="73" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="더 보기" subtitle="↓" titleAlignment="center"/>
+                                <buttonConfiguration key="configuration" style="plain" title="더 보기" subtitle="⋎" titleAlignment="center"/>
                                 <connections>
                                     <action selector="actDetailWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQP-a1-0dL"/>
                                 </connections>
@@ -120,29 +158,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="P96-uG-b2L">
-                        <centerItemGroups>
-                            <barButtonItemGroup customizationDisposition="fixed" id="yYe-cf-9iC">
-                                <barButtonItems>
-                                    <barButtonItem title="공유..." image="square.and.arrow.up" catalog="system" id="dLT-Bc-qpw"/>
-                                    <barButtonItem title="지역 추가" image="plus" catalog="system" id="MFK-DY-fmr">
-                                        <connections>
-                                            <segue destination="Ft0-o6-0c9" kind="show" id="hhb-Qw-ZsB"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="설정" image="gearshape" catalog="system" id="FW9-Pe-V4B">
-                                        <connections>
-                                            <segue destination="GOC-jj-YDp" kind="show" id="Ow0-bG-oyX"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </barButtonItems>
-                            </barButtonItemGroup>
-                        </centerItemGroups>
-                    </navigationItem>
                     <connections>
                         <outlet property="currentTemp" destination="OXB-z7-pIE" id="cgH-Nw-BNu"/>
                         <outlet property="maxTemp" destination="K6Z-VX-BCB" id="Ye0-yS-GnU"/>
                         <outlet property="minTemp" destination="l7S-uL-h1M" id="UBv-9G-XWL"/>
+                        <outlet property="testSymbol" destination="HcH-Cf-HTr" id="0yZ-4L-lzg"/>
                         <outlet property="todaysDate" destination="2YK-vi-0BI" id="Ydw-q2-P5k"/>
                         <outlet property="weatherDetail" destination="qok-xI-5GV" id="e4E-Hb-ddt"/>
                         <outlet property="weatherIllust" destination="a5w-Nl-pp2" id="8j9-2g-q1t"/>
@@ -157,9 +177,9 @@
         <!--Search Table View Controller-->
         <scene sceneID="qGG-7k-jda">
             <objects>
-                <tableViewController id="Ft0-o6-0c9" customClass="SearchTableViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchTableViewController" id="Ft0-o6-0c9" customClass="SearchTableViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fPa-5U-I2c">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="jmP-Dv-7qm">
@@ -202,7 +222,7 @@
         <!--Search Detail View Controller-->
         <scene sceneID="gnV-PL-BqQ">
             <objects>
-                <viewController storyboardIdentifier="searchDetail" id="4iG-s1-1jE" customClass="SearchDetailViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchDetailViewController" id="4iG-s1-1jE" customClass="SearchDetailViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NK7-Dj-tNC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,12 +253,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgM-RB-qJE">
-                                <rect key="frame" x="76" y="75" width="240" height="106"/>
+                                <rect key="frame" x="16" y="75" width="361" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-4Q-l79">
+                                <rect key="frame" x="266" y="32" width="111" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="지역 추가"/>
+                                <connections>
+                                    <action selector="addCityPage:" destination="4iG-s1-1jE" eventType="touchUpInside" id="f3s-z7-oME"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fGB-md-wCi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -253,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rs9-ND-juG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="-1364"/>
+            <point key="canvasLocation" x="1052.6717557251909" y="-1364.0845070422536"/>
         </scene>
         <!--Terms Policy Table View Controller-->
         <scene sceneID="fCv-P9-fy4">
@@ -314,16 +343,16 @@
         <!--Setting Table View Controller-->
         <scene sceneID="tTg-za-uHJ">
             <objects>
-                <tableViewController id="GOC-jj-YDp" customClass="SettingTableViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="CZH-GG-7rV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <tableViewController storyboardIdentifier="SettingTableViewController" id="GOC-jj-YDp" customClass="SettingTableViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="CZH-GG-7rV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="set1" rowHeight="60" id="qJG-bJ-Kx9">
-                                <rect key="frame" x="20" y="55.333332061767578" width="353" height="60"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qJG-bJ-Kx9" id="3jW-yx-UQf">
-                                    <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -475,7 +504,7 @@
             <objects>
                 <tableViewController id="d4o-ts-Plh" customClass="AccountTableViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bZF-yS-780">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -510,20 +539,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dW7-T0-E1F"/>
+                        <segue destination="9O4-Gz-dmd" kind="relationship" relationship="rootViewController" id="Uqb-98-H7G"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fA0-jb-0y2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="-401" y="-27"/>
+        </scene>
+        <!--Main Page View Controller-->
+        <scene sceneID="yOe-1A-32z">
+            <objects>
+                <pageViewController storyboardIdentifier="MainPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9O4-Gz-dmd" customClass="MainPageViewController" customModule="iosProject_5" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="l3c-wq-ETD"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUF-Fj-pPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314" y="-27"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.heart" catalog="system" width="128" height="107"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="gobackward" catalog="system" width="119" height="128"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -16,6 +16,7 @@ class SearchDetailViewController: UIViewController {
     var city: String?
     var weatherImageUrl: String?
     
+    var location: (latitude: Double, longitude: Double)?
     
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var maxTemp: UILabel!
@@ -40,6 +41,31 @@ class SearchDetailViewController: UIViewController {
     
     
     
+   
+    @IBAction func addCityPage(_ sender: Any) {
+        
+        //        let rootViewController = sceneDelegate.window?.rootViewController as? MainPageViewController {
+        //            // rootViewController를 사용한 코드
+        //
+        //
+        //            rootViewController.addWeatherViewController(forLocation: location, city: nil)
+        //        }
+        
+        // 이렇게 하면 navigation controller에 연결된 뷰에는 접근할 수 없음, 좀 더 깊게 접근하는 방식을 사용해야 함
+        
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let sceneDelegate = windowScene.delegate as? SceneDelegate,
+           let navigationController = sceneDelegate.window?.rootViewController as? UINavigationController,
+           let mainPageViewController = navigationController.viewControllers.first as? MainPageViewController {
+            
+            mainPageViewController.addWeatherViewController(forLocation: location, city: nil)
+        }
+        
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
     
     
     

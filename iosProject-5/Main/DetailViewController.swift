@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     var lat: Double?
     var lon: Double?
     var weatherDetails: [WeatherDetailModel] = []
+    var location: (latitude: Double, longitude: Double)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
