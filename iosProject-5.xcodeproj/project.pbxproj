@@ -20,10 +20,12 @@
 		3EE90FF22BC7AEED00AE87FB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE90FF12BC7AEED00AE87FB /* Kingfisher */; };
 		BE6DFACE2BC4D6F60091D296 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DFACD2BC4D6F60091D296 /* SearchDetailViewController.swift */; };
 		BE6DFAD52BC529B30091D296 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DFAD42BC529B30091D296 /* DetailViewController.swift */; };
+		BE8B3B322BCCB8B400B7CC94 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B3B312BCCB8B400B7CC94 /* Protocols.swift */; };
 		BEE230052BC7799B00A9A8A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BEE230042BC7799B00A9A8A1 /* .gitignore */; };
+		BEE7DC5F2BC987F0009EF3E2 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE7DC5E2BC987F0009EF3E2 /* MainPageViewController.swift */; };
 		BEF431992BC2E785004C7D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF431982BC2E785004C7D85 /* AppDelegate.swift */; };
 		BEF4319B2BC2E785004C7D85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4319A2BC2E785004C7D85 /* SceneDelegate.swift */; };
-		BEF4319D2BC2E785004C7D85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4319C2BC2E785004C7D85 /* ViewController.swift */; };
+		BEF4319D2BC2E785004C7D85 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4319C2BC2E785004C7D85 /* WeatherViewController.swift */; };
 		BEF431A02BC2E785004C7D85 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BEF4319F2BC2E785004C7D85 /* Base */; };
 		BEF431A22BC2E787004C7D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF431A12BC2E787004C7D85 /* Assets.xcassets */; };
 		BEF431A52BC2E787004C7D85 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BEF431A42BC2E787004C7D85 /* Base */; };
@@ -43,11 +45,13 @@
 		3EE90FE02BC7AB4700AE87FB /* ToggleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToggleTableViewCell.xib; sourceTree = "<group>"; };
 		BE6DFACD2BC4D6F60091D296 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		BE6DFAD42BC529B30091D296 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BE8B3B312BCCB8B400B7CC94 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		BEE230042BC7799B00A9A8A1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BEE7DC5E2BC987F0009EF3E2 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		BEF431952BC2E785004C7D85 /* iosProject-5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iosProject-5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF431982BC2E785004C7D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF4319A2BC2E785004C7D85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEF4319C2BC2E785004C7D85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEF4319C2BC2E785004C7D85 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		BEF4319F2BC2E785004C7D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEF431A12BC2E787004C7D85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEF431A42BC2E787004C7D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,8 +106,9 @@
 				BEF431B42BC2EE21004C7D85 /* WeatherModel.swift */,
 				BEF431982BC2E785004C7D85 /* AppDelegate.swift */,
 				BEF4319A2BC2E785004C7D85 /* SceneDelegate.swift */,
-				BEF4319C2BC2E785004C7D85 /* ViewController.swift */,
+				BEF4319C2BC2E785004C7D85 /* WeatherViewController.swift */,
 				BE6DFAD42BC529B30091D296 /* DetailViewController.swift */,
+				BEE7DC5E2BC987F0009EF3E2 /* MainPageViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				BE6DFAD02BC4D7350091D296 /* Main */,
 				BE6DFACF2BC4D7030091D296 /* SearchView */,
 				BEF4319E2BC2E785004C7D85 /* Main.storyboard */,
+				BE8B3B312BCCB8B400B7CC94 /* Protocols.swift */,
 				BEF431A12BC2E787004C7D85 /* Assets.xcassets */,
 				BEF431A32BC2E787004C7D85 /* LaunchScreen.storyboard */,
 				BEF431A62BC2E787004C7D85 /* Info.plist */,
@@ -242,8 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8B3B322BCCB8B400B7CC94 /* Protocols.swift in Sources */,
 				BE6DFAD52BC529B30091D296 /* DetailViewController.swift in Sources */,
-				BEF4319D2BC2E785004C7D85 /* ViewController.swift in Sources */,
+				BEF4319D2BC2E785004C7D85 /* WeatherViewController.swift in Sources */,
 				3EE90FDD2BC7A9EC00AE87FB /* LabelTableViewCell.swift in Sources */,
 				BEF431992BC2E785004C7D85 /* AppDelegate.swift in Sources */,
 				BEFDACE12BC31FA9000A5FFE /* AccountTableViewController.swift in Sources */,
@@ -251,6 +258,7 @@
 				BEF4319B2BC2E785004C7D85 /* SceneDelegate.swift in Sources */,
 				3EE90FE12BC7AB4700AE87FB /* ToggleTableViewCell.swift in Sources */,
 				3EE90FD92BC7A8BE00AE87FB /* TimePickerTableViewCell.swift in Sources */,
+				BEE7DC5F2BC987F0009EF3E2 /* MainPageViewController.swift in Sources */,
 				3EE90FD62BC7A86100AE87FB /* SettingNotificatioinViewController.swift in Sources */,
 				BEFDACDF2BC31F98000A5FFE /* SettingTableViewController.swift in Sources */,
 				BE6DFACE2BC4D6F60091D296 /* SearchDetailViewController.swift in Sources */,
@@ -406,9 +414,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CP9THWX4QS;
+				DEVELOPMENT_TEAM = L2NAN5CVVD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iosProject-5/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "날씨 정보 조회를 위해 현재 위치 정보가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -419,7 +428,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.kibwa.hbs.iosProject-5";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kibwa.hbs.iosProject-55";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -434,9 +443,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CP9THWX4QS;
+				DEVELOPMENT_TEAM = L2NAN5CVVD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iosProject-5/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "날씨 정보 조회를 위해 현재 위치 정보가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -447,7 +457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.kibwa.hbs.iosProject-5";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kibwa.hbs.iosProject-55";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
