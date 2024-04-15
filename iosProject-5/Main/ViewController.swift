@@ -66,6 +66,8 @@ class ViewController: UIViewController {
             detailVC.isModalInPresentation = false
             // 모달을 스와이프로 닫을 수 있게 함
             
+//            detailVC.lat = 
+            
             // DetailViewController 표시
             self.present(detailVC, animated: true, completion: nil)
             
