@@ -37,8 +37,8 @@ class SettingNotificatioinViewController: UITableViewController {
     }
     
     
-    // MARK: - Push Notification Methods
-
+    // MARK: - Push 알림 관련 메서드
+    // 1. Push 알림 권한
     func requestAuthNotification() {
         let notificationAuthOptions = UNAuthorizationOptions(arrayLiteral: [.alert, .badge, .sound])
         center.requestAuthorization(options: notificationAuthOptions) { success, error in
@@ -47,13 +47,13 @@ class SettingNotificatioinViewController: UITableViewController {
             }
         }
     }
-    
+    // 2. Push 알림 요청
     func requestSendNotification(hour: Int, minute: Int) {
         let identifier = "Noti_ID"
         
         let content = UNMutableNotificationContent()
-        content.title = "오늘의 날씨입니다"
-        content.body = "바람이 많이 부니 조심하세요."
+        content.title = "좋은 아침이에요! 🌈"
+        content.body = "오늘의 날씨를 알려드릴게요!"
         
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
         dateComponents.hour = hour
@@ -62,11 +62,6 @@ class SettingNotificatioinViewController: UITableViewController {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
-//        UNUserNotificationCenter.current().add(request) { error in
-//            if let error {
-//                print("Noti error: \(error.localizedDescription)")
-//            }
-//        }
         if isToggleOn {
             print("noti is on")
             UNUserNotificationCenter.current().add(request) { error in
@@ -81,7 +76,7 @@ class SettingNotificatioinViewController: UITableViewController {
     }
 
     
-    // MARK: - PickerView Methods
+    // MARK: - Picker view 생성 메서드
 
     func createPickerView(for textField: UITextField) {
         pickerView.delegate = self
@@ -122,7 +117,7 @@ class SettingNotificatioinViewController: UITableViewController {
     }
     
     
-    // MARK: - Table view data source
+    // MARK: - Table view Data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return isToggleOn ? 2 : 1
@@ -140,8 +135,10 @@ class SettingNotificatioinViewController: UITableViewController {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "toggleCell", for: indexPath) as! ToggleTableViewCell
             
-            cell.lblTitle.text = "On / Off"
+            cell.lblTitle.text = "알림 받기"
+            // 토글의 value가 변경됨에 따라 처리를 해주기 위해 addTarget으로 메서드 연결
             cell.switchToggle.addTarget(self, action: #selector(toggleSwitchChanged(_:)), for: .valueChanged)
+            // 토글의 value를 UserDafault에 저장된 값을 가져옴
             cell.switchToggle.isOn = UserDefaults.standard.bool(forKey: toggleStateKey)
             
             return cell
@@ -149,22 +146,23 @@ class SettingNotificatioinViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "pickerCell", for: indexPath) as! TimePickerTableViewCell
-                cell.lblTitle.text = "Delivery Time"
+                cell.lblTitle.text = "시간"
                 cell.tfButton.tintColor = .clear
+                // 버튼을 누르면 picker뷰를 띄울 수 있도록 textField를 넘겨주고 호출
                 createPickerView(for: cell.tfButton)
 
                 return cell
 
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell
-                cell.lblTitle.text = "Location"
-                cell.btn.setTitle("Fixed Location", for: .normal)
+                cell.lblTitle.text = "위치"
+                cell.btn.setTitle("실시간 위치", for: .normal)
                 return cell
 
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell
-                cell.lblTitle.text = "Type"
-                cell.btn.setTitle("On specific conditions", for: .normal)
+                cell.lblTitle.text = "조건"
+                cell.btn.setTitle("매일 받기", for: .normal)
                 return cell
 
             default:
@@ -175,54 +173,14 @@ class SettingNotificatioinViewController: UITableViewController {
             }
         }
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+// MARK: Picker view Delegate 및 DataSource
 
 extension SettingNotificatioinViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

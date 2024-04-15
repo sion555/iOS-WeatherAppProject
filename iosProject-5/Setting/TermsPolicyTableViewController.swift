@@ -1,22 +1,20 @@
 //
-//  SettingTableViewController.swift
+//  TermsPolicyTableViewController.swift
 //  iosProject-5
 //
-//  Created by 한범석 on 4/8/24.
+//  Created by 조다은 on 4/12/24.
 //
 
 import UIKit
 
-class SettingTableViewController: UITableViewController {
+class TermsPolicyTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "설정"
+
         self.tableView.separatorInset.left = 0
     }
 
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,20 +27,20 @@ class SettingTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "set1", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "termsCell", for: indexPath)
 
         var content = cell.defaultContentConfiguration()
         
         switch indexPath.row {
-            case 0:
-                content.text = "일반 설정"
-            case 1:
-                content.text = "알림 설정"
-            case 2:
-                content.text = "약관 및 정책"
-            default:
-                content.text = "기타"
-            }
+        case 0:
+            content.text = "개인정보 처리 방침"
+        case 1:
+            content.text = "이용약관"
+        case 2:
+            content.text = "오픈소스 라이선스"
+        default:
+            content.text = "기타"
+        }
         
         cell.contentConfiguration = content
 
@@ -50,18 +48,13 @@ class SettingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingNoti") as? SettingNotificatioinViewController
-            else { return }
-            navigationController?.pushViewController(vc, animated: true)
-        }
         if indexPath.row == 2 {
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: "TermsPolicy") as? TermsPolicyTableViewController
-            else { return }
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "Opensource") as? OpenSourceViewController else { return }
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

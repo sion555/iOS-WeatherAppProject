@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0464F32BCCBCB100A5CD00 /* CustomCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0464F22BCCBCB100A5CD00 /* CustomCollectionHeaderView.swift */; };
+		3EAC32662BC9443D00EC8DFE /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC32642BC9443D00EC8DFE /* HourCollectionViewCell.swift */; };
+		3EAC32672BC9443D00EC8DFE /* HourCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EAC32652BC9443D00EC8DFE /* HourCollectionViewCell.xib */; };
+		3EAC32692BC954C900EC8DFE /* DayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC32682BC954C900EC8DFE /* DayScrollView.swift */; };
+		3EAC32702BC957D000EC8DFE /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC326E2BC957D000EC8DFE /* DayTableViewCell.swift */; };
+		3EAC32712BC957D000EC8DFE /* DayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EAC326F2BC957D000EC8DFE /* DayTableViewCell.xib */; };
+		3EAC32732BC95F5700EC8DFE /* WeatherDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC32722BC95F5700EC8DFE /* WeatherDetailModel.swift */; };
 		3EE90FD62BC7A86100AE87FB /* SettingNotificatioinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE90FD52BC7A86100AE87FB /* SettingNotificatioinViewController.swift */; };
 		3EE90FD92BC7A8BE00AE87FB /* TimePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE90FD72BC7A8BE00AE87FB /* TimePickerTableViewCell.swift */; };
 		3EE90FDA2BC7A8BE00AE87FB /* TimePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EE90FD82BC7A8BE00AE87FB /* TimePickerTableViewCell.xib */; };
@@ -18,6 +25,8 @@
 		3EE90FEC2BC7AE4700AE87FB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE90FEB2BC7AE4700AE87FB /* Alamofire */; };
 		3EE90FF02BC7AEE200AE87FB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE90FEF2BC7AEE200AE87FB /* Alamofire */; };
 		3EE90FF22BC7AEED00AE87FB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE90FF12BC7AEED00AE87FB /* Kingfisher */; };
+		3EE90FF62BC8CC1600AE87FB /* TermsPolicyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE90FF52BC8CC1600AE87FB /* TermsPolicyTableViewController.swift */; };
+		3EE90FF82BC8D15500AE87FB /* OpenSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE90FF72BC8D15500AE87FB /* OpenSourceViewController.swift */; };
 		BE6DFACE2BC4D6F60091D296 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DFACD2BC4D6F60091D296 /* SearchDetailViewController.swift */; };
 		BE6DFAD52BC529B30091D296 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DFAD42BC529B30091D296 /* DetailViewController.swift */; };
 		BE8B3B322BCCB8B400B7CC94 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B3B312BCCB8B400B7CC94 /* Protocols.swift */; };
@@ -36,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E0464F22BCCBCB100A5CD00 /* CustomCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionHeaderView.swift; sourceTree = "<group>"; };
+		3EAC32642BC9443D00EC8DFE /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
+		3EAC32652BC9443D00EC8DFE /* HourCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCollectionViewCell.xib; sourceTree = "<group>"; };
+		3EAC32682BC954C900EC8DFE /* DayScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayScrollView.swift; sourceTree = "<group>"; };
+		3EAC326E2BC957D000EC8DFE /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
+		3EAC326F2BC957D000EC8DFE /* DayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayTableViewCell.xib; sourceTree = "<group>"; };
+		3EAC32722BC95F5700EC8DFE /* WeatherDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailModel.swift; sourceTree = "<group>"; };
 		3EE90FD52BC7A86100AE87FB /* SettingNotificatioinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingNotificatioinViewController.swift; path = "iosProject-5/Setting/SettingNotificatioinViewController.swift"; sourceTree = SOURCE_ROOT; };
 		3EE90FD72BC7A8BE00AE87FB /* TimePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerTableViewCell.swift; sourceTree = "<group>"; };
 		3EE90FD82BC7A8BE00AE87FB /* TimePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerTableViewCell.xib; sourceTree = "<group>"; };
@@ -43,6 +59,8 @@
 		3EE90FDC2BC7A9EC00AE87FB /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		3EE90FDF2BC7AB4700AE87FB /* ToggleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTableViewCell.swift; sourceTree = "<group>"; };
 		3EE90FE02BC7AB4700AE87FB /* ToggleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToggleTableViewCell.xib; sourceTree = "<group>"; };
+		3EE90FF52BC8CC1600AE87FB /* TermsPolicyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPolicyTableViewController.swift; sourceTree = "<group>"; };
+		3EE90FF72BC8D15500AE87FB /* OpenSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
 		BE6DFACD2BC4D6F60091D296 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		BE6DFAD42BC529B30091D296 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BE8B3B312BCCB8B400B7CC94 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -104,10 +122,17 @@
 			isa = PBXGroup;
 			children = (
 				BEF431B42BC2EE21004C7D85 /* WeatherModel.swift */,
+				3EAC32722BC95F5700EC8DFE /* WeatherDetailModel.swift */,
 				BEF431982BC2E785004C7D85 /* AppDelegate.swift */,
 				BEF4319A2BC2E785004C7D85 /* SceneDelegate.swift */,
 				BEF4319C2BC2E785004C7D85 /* WeatherViewController.swift */,
 				BE6DFAD42BC529B30091D296 /* DetailViewController.swift */,
+				3EAC32682BC954C900EC8DFE /* DayScrollView.swift */,
+				3EAC32642BC9443D00EC8DFE /* HourCollectionViewCell.swift */,
+				3EAC32652BC9443D00EC8DFE /* HourCollectionViewCell.xib */,
+				3EAC326E2BC957D000EC8DFE /* DayTableViewCell.swift */,
+				3EAC326F2BC957D000EC8DFE /* DayTableViewCell.xib */,
+				3E0464F22BCCBCB100A5CD00 /* CustomCollectionHeaderView.swift */,
 				BEE7DC5E2BC987F0009EF3E2 /* MainPageViewController.swift */,
 			);
 			path = Main;
@@ -118,6 +143,8 @@
 			children = (
 				3EE90FD42BC7A7E900AE87FB /* SettingNotification */,
 				BEFDACDE2BC31F98000A5FFE /* SettingTableViewController.swift */,
+				3EE90FF52BC8CC1600AE87FB /* TermsPolicyTableViewController.swift */,
+				3EE90FF72BC8D15500AE87FB /* OpenSourceViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -231,6 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EAC32672BC9443D00EC8DFE /* HourCollectionViewCell.xib in Resources */,
+				3EAC32712BC957D000EC8DFE /* DayTableViewCell.xib in Resources */,
 				3EE90FDE2BC7A9EC00AE87FB /* LabelTableViewCell.xib in Resources */,
 				3EE90FE22BC7AB4700AE87FB /* ToggleTableViewCell.xib in Resources */,
 				BEE230052BC7799B00A9A8A1 /* .gitignore in Resources */,
@@ -252,14 +281,21 @@
 				BE6DFAD52BC529B30091D296 /* DetailViewController.swift in Sources */,
 				BEF4319D2BC2E785004C7D85 /* WeatherViewController.swift in Sources */,
 				3EE90FDD2BC7A9EC00AE87FB /* LabelTableViewCell.swift in Sources */,
+				3EAC32692BC954C900EC8DFE /* DayScrollView.swift in Sources */,
 				BEF431992BC2E785004C7D85 /* AppDelegate.swift in Sources */,
 				BEFDACE12BC31FA9000A5FFE /* AccountTableViewController.swift in Sources */,
+				3EE90FF82BC8D15500AE87FB /* OpenSourceViewController.swift in Sources */,
+				3E0464F32BCCBCB100A5CD00 /* CustomCollectionHeaderView.swift in Sources */,
 				BEF431B52BC2EE21004C7D85 /* WeatherModel.swift in Sources */,
 				BEF4319B2BC2E785004C7D85 /* SceneDelegate.swift in Sources */,
 				3EE90FE12BC7AB4700AE87FB /* ToggleTableViewCell.swift in Sources */,
+				3EAC32702BC957D000EC8DFE /* DayTableViewCell.swift in Sources */,
 				3EE90FD92BC7A8BE00AE87FB /* TimePickerTableViewCell.swift in Sources */,
+				3EAC32732BC95F5700EC8DFE /* WeatherDetailModel.swift in Sources */,
+				3EE90FF62BC8CC1600AE87FB /* TermsPolicyTableViewController.swift in Sources */,
 				BEE7DC5F2BC987F0009EF3E2 /* MainPageViewController.swift in Sources */,
 				3EE90FD62BC7A86100AE87FB /* SettingNotificatioinViewController.swift in Sources */,
+				3EAC32662BC9443D00EC8DFE /* HourCollectionViewCell.swift in Sources */,
 				BEFDACDF2BC31F98000A5FFE /* SettingTableViewController.swift in Sources */,
 				BE6DFACE2BC4D6F60091D296 /* SearchDetailViewController.swift in Sources */,
 				BEFDAD072BC4C55F000A5FFE /* SearchTableViewController.swift in Sources */,
